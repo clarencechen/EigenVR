@@ -15,8 +15,14 @@ public class CreateShapes : MonoBehaviour {
 	public void OnExit(object sender, PointerEventArgs e)
 	{
 		timer = 0f;
-		curr.GetComponent<Material> ().color = new Color (0f, 1f, .5f);
+		if (!IsScroll (curr)) {
+			curr.GetComponent<Renderer> ().material.color = new Color (0f, 1f, .5f);
+		}
 		curr = null;
+	}
+	private bool IsScroll(GameObject obj)
+	{
+		return obj.name.Contains ("Scroll");
 	}
 	// Use this for initialization
 	void Start () {
@@ -30,31 +36,21 @@ public class CreateShapes : MonoBehaviour {
 	void Update () {
 		float now = Time.time;
 		if (curr && now -timer > 5f) {
-			if (curr.name.Equals ("LeftScroll")) {
+			if (IsScroll(curr)) {
 				for (int i = 0; i < this.transform.childCount; i++) {
 					Transform row = this.transform.GetChild (i).transform;
+					bool left = curr.name.Contains("Left");
 					for (int j = 0; j < row.childCount; j++) {
 						Transform shape = row.GetChild (j).transform;
-						if (shape.localPosition.x == 7.5) {
-							shape.localPosition -= new Vector3 (15, 0, 0);
+						if (shape.localPosition.x == (left ? 7.5 : -7.5)) {
+							shape.localPosition += left ? new Vector3 (-15, 0, 0) : new Vector3 (15, 0, 0);
 						} else {
-							shape.localPosition += new Vector3 (5, 0, 0);
-						}
-					}
-				}
-			} else if (curr.name.Equals ("RightScroll")) {
-				for (int i = 0; i < this.transform.childCount; i++) {
-					Transform row = this.transform.GetChild (i).transform;
-					for (int j = 0; j < row.childCount; j++) {
-						Transform shape = row.GetChild (j).transform;
-						if (shape.localPosition.x == -7.5) {
-							shape.localPosition += new Vector3 (15, 0, 0);
-						} else {
-							shape.localPosition -= new Vector3 (5, 0, 0);
+							shape.localPosition += left ? new Vector3 (5, 0, 0) : new Vector3(-5, 0, 0);
 						}
 					}
 				}
 			} else {
+				curr.GetComponent<Renderer> ().material.color = new Color (0f, 1f, .5f);
 				for(int i = 1; i <= 3; i++)
 				{
 					GameObject info = this.transform.parent.GetChild (i).gameObject;
@@ -67,11 +63,10 @@ public class CreateShapes : MonoBehaviour {
 				}
 			}
 			timer = 0f;
-			curr.GetComponent<Material> ().color = new Color (0f, 1f, .5f);
 			curr = null;
 		}
-		else if (curr) {
-			curr.GetComponent<Material> ().color = new Color ((now -timer)/5f, 1f, .5f);
+		else if (curr && !IsScroll(curr)) {
+			curr.GetComponent<Renderer> ().material.color = new Color ((now -timer)/5f, 1f, .5f);
 		}
 	}
 }
