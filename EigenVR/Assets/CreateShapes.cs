@@ -22,7 +22,7 @@ public class CreateShapes : MonoBehaviour {
 	void Start () {
 		timer = 0f;
 		curr = null;
-		lp = Camera.main.GetComponent<SteamVR_LaserPointer>();
+		lp = Camera.main.gameObject.GetComponent<SteamVR_LaserPointer>();
 		lp.PointerIn += OnEnter;
 		lp.PointerOut += OnExit;
 	}
