@@ -37,8 +37,9 @@ public class CreateShapes : MonoBehaviour {
 		float now = Time.time;
 		if (curr && now -timer > 5f) {
 			if (IsScroll(curr)) {
-				for (int i = 0; i < this.transform.childCount; i++) {
-					Transform row = this.transform.GetChild (i).transform;
+				Transform menu = this.transform.GetChild (0);
+				for (int i = 0; i < menu.transform.childCount; i++) {
+					Transform row = menu.transform.GetChild (i).transform;
 					bool left = curr.name.Contains("Left");
 					for (int j = 0; j < row.childCount; j++) {
 						Transform shape = row.GetChild (j).transform;
@@ -50,23 +51,24 @@ public class CreateShapes : MonoBehaviour {
 					}
 				}
 			} else {
-				curr.GetComponent<Renderer> ().material.color = new Color (0f, 1f, .5f);
+				curr.GetComponent<MeshRenderer> ().material.color = new Color (0f, 1f, .5f);
 				for(int i = 1; i <= 3; i++)
 				{
 					GameObject info = this.transform.parent.GetChild (i).gameObject;
 					if (info.transform.childCount == 0) {
 						GameObject manip = GameObject.Instantiate (curr, info.transform);
 						manip.transform.localPosition = new Vector3 (0, 0, 0);
-						manip.transform.localScale = new Vector3 (.1f, .1f, .1f);
+						manip.transform.localScale = new Vector3 (1f, 1f, 1f);
 						break;
 					}
 				}
+				curr = null;
+				timer = 0f;
 			}
-			timer = 0f;
-			curr = null;
+			timer = Time.time;
 		}
 		else if (curr && !IsScroll(curr)) {
-			curr.GetComponent<Renderer> ().material.color = new Color ((now -timer)/5f, 1f, .5f);
+			curr.GetComponent<MeshRenderer> ().material.color = new Color ((now -timer)/5f, 1f, .5f);
 		}
 	}
 }
