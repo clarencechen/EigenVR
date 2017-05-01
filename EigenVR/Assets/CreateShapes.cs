@@ -35,10 +35,10 @@ public class CreateShapes : MonoBehaviour {
 					Transform row = this.transform.GetChild (i).transform;
 					for (int j = 0; j < row.childCount; j++) {
 						Transform shape = row.GetChild (j).transform;
-						if (shape.position.x == 7.5) {
-							shape.position -= new Vector3 (15, 0, 0);
+						if (shape.localPosition.x == 7.5) {
+							shape.localPosition -= new Vector3 (15, 0, 0);
 						} else {
-							shape.position += new Vector3 (5, 0, 0);
+							shape.localPosition += new Vector3 (5, 0, 0);
 						}
 					}
 				}
@@ -47,19 +47,23 @@ public class CreateShapes : MonoBehaviour {
 					Transform row = this.transform.GetChild (i).transform;
 					for (int j = 0; j < row.childCount; j++) {
 						Transform shape = row.GetChild (j).transform;
-						if (shape.position.x == -7.5) {
-							shape.position += new Vector3 (15, 0, 0);
+						if (shape.localPosition.x == -7.5) {
+							shape.localPosition += new Vector3 (15, 0, 0);
 						} else {
-							shape.position -= new Vector3 (5, 0, 0);
+							shape.localPosition -= new Vector3 (5, 0, 0);
 						}
 					}
 				}
 			} else {
 				for(int i = 1; i <= 3; i++)
 				{
-
 					GameObject info = this.transform.parent.GetChild (i).gameObject;
-
+					if (info.transform.childCount == 0) {
+						GameObject manip = GameObject.Instantiate (curr, info.transform);
+						manip.transform.localPosition = new Vector3 (0, 0, 0);
+						manip.transform.localScale = new Vector3 (.1f, .1f, .1f);
+						break;
+					}
 				}
 			}
 			timer = 0f;
@@ -67,7 +71,7 @@ public class CreateShapes : MonoBehaviour {
 			curr = null;
 		}
 		else if (curr) {
-			curr.GetComponent<Material> ().color = new Color ((now -timer)/5, 0, 0, 0);
+			curr.GetComponent<Material> ().color = new Color ((now -timer)/5f, 1f, .5f);
 		}
 	}
 }

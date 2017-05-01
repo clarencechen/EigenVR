@@ -3,13 +3,13 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CreateShapes.cs">
     <Files>
       <File FileName="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" Line="1" Column="1" />
-      <File FileName="Assets\CreateShapes.cs" Line="25" Column="18" />
+      <File FileName="Assets\CreateShapes.cs" Line="28" Column="3" />
       <File FileName="Assets\PrefabContainer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\Clarence\Documents\GitHub\EigenVR\EigenVR\Assets\CreateShapes.cs" line="25" column="1" />
+      <Breakpoint file="C:\Users\Clarence\Documents\GitHub\EigenVR\EigenVR\Assets\CreateShapes.cs" line="26" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
