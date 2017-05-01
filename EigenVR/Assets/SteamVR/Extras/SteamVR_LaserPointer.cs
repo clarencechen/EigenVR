@@ -4,9 +4,9 @@ using System.Collections;
 
 public struct PointerEventArgs
 {
-    public uint controllerIndex;
     public uint flags;
     public float distance;
+	public Vector3 hitpnt;
     public Transform target;
 }
 
@@ -88,8 +88,6 @@ public class SteamVR_LaserPointer : MonoBehaviour
 
         float dist = 100f;
 
-        SteamVR_TrackedController controller = GetComponent<SteamVR_TrackedController>();
-
         Ray raycast = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         bool bHit = Physics.Raycast(raycast, out hit);
@@ -97,26 +95,20 @@ public class SteamVR_LaserPointer : MonoBehaviour
         if(previousContact && previousContact != hit.transform)
         {
             PointerEventArgs args = new PointerEventArgs();
-            if (controller != null)
-            {
-                args.controllerIndex = controller.controllerIndex;
-            }
             args.distance = 0f;
             args.flags = 0;
             args.target = previousContact;
+			args.hitpnt = new Vector3 ();
             OnPointerOut(args);
             previousContact = null;
         }
         if(bHit && previousContact != hit.transform)
         {
             PointerEventArgs argsIn = new PointerEventArgs();
-            if (controller != null)
-            {
-                argsIn.controllerIndex = controller.controllerIndex;
-            }
             argsIn.distance = hit.distance;
             argsIn.flags = 0;
             argsIn.target = hit.transform;
+			argsIn.hitpnt = hit.point;
             OnPointerIn(argsIn);
             previousContact = hit.transform;
         }
@@ -128,15 +120,8 @@ public class SteamVR_LaserPointer : MonoBehaviour
         {
             dist = hit.distance;
         }
-
-        if (controller != null && controller.triggerPressed)
-        {
-            pointer.transform.localScale = new Vector3(thickness * 5f, thickness * 5f, dist);
-        }
-        else
-        {
-            pointer.transform.localScale = new Vector3(thickness, thickness, dist);
-        }
+			
+        pointer.transform.localScale = new Vector3(thickness * 2f, thickness * 2f, dist);
         pointer.transform.localPosition = new Vector3(0f, 0f, dist/2f);
     }
 }
