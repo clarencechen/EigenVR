@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4202640991040524}
   - component: {fileID: 23602381786416298}
   - component: {fileID: 102640475001110354}
+  - component: {fileID: 114325517884088210}
+  - component: {fileID: 114341639579717876}
   m_Layer: 0
   m_Name: New Text
   m_TagString: Untagged
@@ -79,7 +81,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1884795214656068}
-  m_Text: Radius
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -93,3 +95,25 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114325517884088210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884795214656068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376583396e583b64cbc705a06503b9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114341639579717876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884795214656068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07932779e8854e4cba05b4fcdab3c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

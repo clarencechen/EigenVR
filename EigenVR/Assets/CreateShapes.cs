@@ -15,7 +15,7 @@ public class CreateShapes : MonoBehaviour {
 	public void OnExit(object sender, PointerEventArgs e)
 	{
 		timer = 0f;
-		if (!IsScroll (curr)) {
+		if (curr && !IsScroll (curr)) {
 			curr.GetComponent<Renderer> ().material.color = new Color (0f, 1f, .5f);
 		}
 		curr = null;
@@ -56,9 +56,7 @@ public class CreateShapes : MonoBehaviour {
 				{
 					GameObject info = this.transform.parent.GetChild (i).gameObject;
 					if (info.transform.childCount == 0) {
-						GameObject manip = GameObject.Instantiate (curr, info.transform);
-						manip.transform.localPosition = new Vector3 (0, 0, 0);
-						manip.transform.localScale = new Vector3 (1f, 1f, 1f);
+						info.GetComponent<SetupInfo> ().Setup (curr);
 						break;
 					}
 				}
