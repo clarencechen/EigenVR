@@ -1,9 +1,31 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SteamVR\readme.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CreateShapes.cs">
     <Files>
-      <File FileName="Assets\SteamVR\readme.txt" Line="472" Column="1" />
+      <File FileName="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" Line="106" Column="10" />
+      <File FileName="Assets\CreateShapes.cs" Line="55" Column="7" />
+      <File FileName="Assets\PrefabContainer.cs" Line="11" Column="32" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EigenVR" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="SteamVR" expanded="True">
+                <Node name="Extras" expanded="True" />
+              </Node>
+              <Node name="CreateShapes.cs" selected="True" />
+            </Node>
+            <Node name="Assembly-CSharp-Editor" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="EigenVR" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
