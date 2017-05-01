@@ -444,7 +444,7 @@ MonoBehaviour:
   holder: {fileID: 0}
   pointer: {fileID: 0}
   addRigidBody: 0
-  reference: {fileID: 814322208}
+  reference: {fileID: 0}
 --- !u!1 &934489150
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,9 +568,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapes:
   - {fileID: 1428147587798954, guid: d32ed42dc4f8f3b41bcdb1a576f0baee, type: 2}
-  - {fileID: 1732882707516802, guid: facc50b3f837dd44788d989c0a8caee2, type: 2}
   - {fileID: 1553158069103298, guid: 8756b2096b09d024c9025db7abe9bb6c, type: 2}
   - {fileID: 1567669702805658, guid: ba04f2caddf855c4baa18337ba564ef0, type: 2}
+  - {fileID: 1732882707516802, guid: facc50b3f837dd44788d989c0a8caee2, type: 2}
 --- !u!1 &1362514857
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,8 +663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _head: {fileID: 814322208}
-  _ears: {fileID: 1055576014}
+  _head: {fileID: 0}
+  _ears: {fileID: 0}
   wireframe: 0
 --- !u!20 &1452257632
 Camera:

@@ -62,7 +62,9 @@ public class CreateShapes : MonoBehaviour {
 
 				}
 			}
-			OnExit (null, null);
+			timer = 0f;
+			curr.GetComponent<Material> ().color = new Color (0f, 1f, .5f);
+			curr = null;
 		}
 		else if (curr) {
 			curr.GetComponent<Material> ().color = new Color ((now -timer)/5, 0, 0, 0);
