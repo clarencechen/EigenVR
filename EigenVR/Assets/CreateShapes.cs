@@ -7,14 +7,6 @@ public class CreateShapes : MonoBehaviour {
 	private float timer;
 	private GameObject curr;
 
-	// Use this for initialization
-	void Start () {
-		timer = 0f;
-		curr = null;
-		lp = Camera.main.GetComponent<SteamVR_LaserPointer>();
-		lp.PointerIn += OnEnter;
-		lp.PointerOut += OnExit;
-	}
 	public void OnEnter(object sender, PointerEventArgs e)
 	{
 		timer = Time.time;
@@ -25,6 +17,14 @@ public class CreateShapes : MonoBehaviour {
 		timer = 0f;
 		curr.GetComponent<Material> ().color = new Color (0f, 1f, .5f);
 		curr = null;
+	}
+	// Use this for initialization
+	void Start () {
+		timer = 0f;
+		curr = null;
+		lp = Camera.main.GetComponent<SteamVR_LaserPointer>();
+		lp.PointerIn += OnEnter;
+		lp.PointerOut += OnExit;
 	}
 	// Update is called once per frame
 	void Update () {
