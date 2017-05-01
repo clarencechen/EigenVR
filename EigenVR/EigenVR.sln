@@ -1,14 +1,24 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{A6C9C031-76D9-508C-EEDF-A930E146A142}") = "EigenVR", "Assembly-CSharp.csproj", "{F346FAE4-372E-F40F-F515-C961AB48356A}"
+EndProject
+Project("{A6C9C031-76D9-508C-EEDF-A930E146A142}") = "EigenVR", "Assembly-CSharp-Editor.csproj", "{878696DF-6483-EA9C-D2F2-605193A9C09A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{F346FAE4-372E-F40F-F515-C961AB48356A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F346FAE4-372E-F40F-F515-C961AB48356A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F346FAE4-372E-F40F-F515-C961AB48356A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F346FAE4-372E-F40F-F515-C961AB48356A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{878696DF-6483-EA9C-D2F2-605193A9C09A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878696DF-6483-EA9C-D2F2-605193A9C09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878696DF-6483-EA9C-D2F2-605193A9C09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878696DF-6483-EA9C-D2F2-605193A9C09A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
